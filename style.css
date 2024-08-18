@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.apod, .photos, .library, .epic, .hubble, .mars-odyssey {
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.apod img, .photo img, .library-item img, .epic-item img, .hubble-item img, .mars-odyssey-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.photo, .library-item, .epic-item, .hubble-item, .mars-odyssey-item {
+    margin-bottom: 20px;
+}

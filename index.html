@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Images</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>NASA Images</h1>
+
+    <!-- Astronomy Picture of the Day (APOD) -->
+    <h2>Astronomy Picture of the Day</h2>
+    <div class="apod">
+        <h3>{{ apod_data.title }}</h3>
+        <img src="{{ apod_data.url }}" alt="APOD Image">
+        <p>{{ apod_data.explanation }}</p>
+    </div>
+
+    <!-- Mars Rover Photos -->
+    <h2>Mars Rover Photos</h2>
+    <div class="photos">
+        {% for photo in rover_photos %}
+        <div class="photo">
+            <img src="{{ photo.img_src }}" alt="Mars Rover Photo">
+            <p>Rover: {{ photo.rover.name }}, Camera: {{ photo.camera.full_name }}</p>
+            <p>Date: {{ photo.earth_date }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- NASA Image and Video Library -->
+    <h2>NASA Image and Video Library</h2>
+    <div class="library">
+        {% for item in library_data %}
+        <div class="library-item">
+            <img src="{{ item['url'] }}" alt="NASA Library Image">
+            <p>{{ item['title'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- EPIC Images -->
+    <h2>EPIC Images</h2>
+    <div class="epic">
+        {% for image in epic_data %}
+        <div class="epic-item">
+            <img src="https://epic.gsfc.nasa.gov/archive/natural/{{ image['date'] | replace('-', '/') }}/png/{{ image['image'] }}.png" alt="EPIC Image">
+            <p>Date: {{ image['date'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Hubble Space Telescope Images -->
+    <h2>Hubble Space Telescope Images</h2>
+    <div class="hubble">
+        {% for image in hubble_data %}
+        <div class="hubble-item">
+            <img src="{{ image['url'] }}" alt="Hubble Image">
+            <p>{{ image['title'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Mars Odyssey Images -->
+    <h2>Mars Odyssey Images</h2>
+    <div class="mars-odyssey">
+        {% for image in mars_odyssey_data %}
+        <div class="mars-odyssey-item">
+            <img src="{{ image['url'] }}" alt="Mars Odyssey Image">
+            <p>{{ image['title'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
